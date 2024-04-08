@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-data-jpa-tutorial
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password:
+    url: jdbc:mysql://localhost:3306/schooldb
+    username: root
+  jpa:
+    #database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
