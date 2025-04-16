@@ -1,5 +1,6 @@
 package com.dailycoding.spring.data.jpa.tutorial.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,25 +12,18 @@ import lombok.*;
 @ToString(exclude = "course")
 public class CourseMaterial {
     @Id
-    @SequenceGenerator(
-            name = "course_material_sequence",
-            sequenceName = "course_material_sequence",
-            allocationSize = 1
-    )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "course_material_sequence"
+            strategy = GenerationType.IDENTITY
     )
     private Long courseMaterialId;
     private String url;
 
-    @OneToOne(
-            cascade = CascadeType.ALL,
-            optional = false
-    )
+    @OneToOne
     @JoinColumn(
             name = "course_id",
-            referencedColumnName = "courseId"
+            referencedColumnName = "courseId",
+            nullable = false
     )
+    @JsonIgnore
     private Course course;
 }

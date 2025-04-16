@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "a1a2022f-c1a1-4795-b6e0-1088392c08d5",
+		"name": "Spring Data JPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32646683"
+	},
+	"item": [
+		{
+			"name": "Get Course By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/course/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"course",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"courseTitle\": \"Spring Boot AI\",\r\n  \"credit\": 5,\r\n  \"teacher\": {\r\n    \"firstName\": \"Sunil\",\r\n    \"lastName\": \"Gudle\"\r\n  },\r\n  \"courseMaterial\": {\r\n    \"url\": \"https://springboot.io/material\"\r\n  },\r\n  \"students\": [\r\n    {\r\n      \"firstName\": \"Sunil1\",\r\n      \"lastName\": \"Gudle1\",\r\n      \"emailId\": \"Sunilg@example.com\",\r\n      \"guardian\": {\r\n        \"name\": \"Mr. Sunil\",\r\n        \"email\": \"sunilg1@example.com\",\r\n        \"mobile\": \"9199999999\"\r\n      }\r\n    },\r\n    {\r\n      \"firstName\": \"Ram\",\r\n      \"lastName\": \"Ban\",\r\n      \"emailId\": \"ramban@example.com\",\r\n      \"guardian\": {\r\n        \"name\": \"Mrs. Shyam\",\r\n        \"email\": \"shyamg@example.com\",\r\n        \"mobile\": \"8881888888\"\r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"course"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

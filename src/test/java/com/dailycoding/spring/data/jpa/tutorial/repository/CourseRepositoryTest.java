@@ -19,13 +19,13 @@ class CourseRepositoryTest {
     private CourseRepository courseRepository;
 
     @Test
-    public void printCourses(){
+    void printCourses(){
         List<Course> courseList = courseRepository.findAll();
         System.out.println("Courses: " + courseList);
     }
 
     @Test
-    public void saveCourseWithTeacher(){
+    void saveCourseWithTeacher(){
 
         Teacher teacher = Teacher.builder()
                 .firstName("Priyanka")
@@ -42,10 +42,8 @@ class CourseRepositoryTest {
     }
 
     @Test
-    public void findAllPagination(){
+    void findAllPagination(){
         Pageable firstPageWithThreeRecords = PageRequest.of(0, 3);
-
-        Pageable secondPageWithTwoRecords = PageRequest.of(1, 2);
 
         List<Course> courses = courseRepository.findAll(firstPageWithThreeRecords).getContent();
 
@@ -59,17 +57,15 @@ class CourseRepositoryTest {
     }
 
     @Test
-    public void findAllSorting(){
+    void findAllSorting(){
         Pageable sortByTitle = PageRequest.of(0, 2, Sort.by("courseTitle"));
-
-        Pageable sortByCreditDesc = PageRequest.of(0, 2, Sort.by("credit").descending());
 
         List<Course> courses = courseRepository.findAll(sortByTitle).getContent();
         System.out.println("Course: " + courses);
     }
 
     @Test
-    public void saveCourseWithStudentAndTeacher(){
+    void saveCourseWithStudentAndTeacher(){
         Teacher teacher = Teacher.builder()
                 .firstName("Rakesh")
                 .lastName("Jhunjhunwala")
@@ -78,7 +74,7 @@ class CourseRepositoryTest {
         Student student = Student.builder()
                 .firstName("Adam")
                 .lastName("Anderson")
-                .emailId("adama@gmail.com")
+                .emailId("adama1@gmail.com")
                 .build();
 
         Course course = Course.builder()

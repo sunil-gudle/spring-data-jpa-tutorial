@@ -14,14 +14,8 @@ import lombok.NoArgsConstructor;
 public class Teacher {
 
     @Id
-    @SequenceGenerator(
-            name = "teacher_sequence",
-            sequenceName = "teacher-sequence",
-            allocationSize = 1
-    )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "teacher_sequence"
+            strategy = GenerationType.IDENTITY
     )
     private Long teacherId;
     private String firstName;
