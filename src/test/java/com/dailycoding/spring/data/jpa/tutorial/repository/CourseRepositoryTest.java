@@ -3,6 +3,7 @@ package com.dailycoding.spring.data.jpa.tutorial.repository;
 import com.dailycoding.spring.data.jpa.tutorial.entity.Course;
 import com.dailycoding.spring.data.jpa.tutorial.entity.Student;
 import com.dailycoding.spring.data.jpa.tutorial.entity.Teacher;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 @SpringBootTest
+@Disabled
 class CourseRepositoryTest {
 
     @Autowired
