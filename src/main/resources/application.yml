@@ -3,7 +3,7 @@ spring:
     name: spring-data-jpa-tutorial
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: Kaise@1hua
+    password:
     url: jdbc:mysql://localhost:3306/schooldb
     username: root
   jpa:
